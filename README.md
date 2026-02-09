@@ -7,7 +7,7 @@
 - 支持 PDF 路径、文本内容或论文链接输入
 - 认知提取算法：去噪 → 提取 → 批判
 - 五维分析：核心痛点、解题机制、创新增量、批判性边界、餐巾纸公式
-- 生成 Org-mode 格式报告，含 ASCII 逻辑流程图
+- 生成 Markdown 格式报告，含 ASCII 逻辑流程图
 
 ## 安装
 
@@ -25,7 +25,7 @@ git clone https://github.com/lijigang/ljg-skill-xray-paper.git ~/.claude/skills/
 
 ## 输出示例
 
-生成的 Org-mode 报告包含：
+生成的 Markdown 报告包含：
 
 - **NAPKIN FORMULA** — 餐巾纸公式，一句话浓缩核心
 - **PROBLEM** — 痛点定义与前人困境

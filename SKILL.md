@@ -63,41 +63,43 @@ user_invocable: true
 
 使用纯 ASCII 字符（仅用 +, -, |, >, <, /, \, *, =, . 等基础符号）绘制论文核心逻辑流程。
 
-### 步骤 5：生成 Org 报告
+### 步骤 5：生成 Markdown 报告
 
-使用 Write 工具，按以下模板生成 org-mode 文件。要求：
+使用 Write 工具，按以下模板生成 Markdown 文件。要求：
 - 文字精确、简练、清晰
 - 使用自然段落，不使用表格
 - ASCII 图形仅用纯 ASCII 基础符号，不用 Unicode
 
-```org
-#+title:      xray-{简短标题}
-#+date:       [{YYYY-MM-DD Day HH:MM}]
-#+filetags:   :read:xray:paper:
-#+identifier: {YYYYMMDDTHHMMSS}
-#+source:     {论文链接}
-#+authors:    {作者}
-#+venue:      {会议/期刊}
+~~~markdown
+---
+title:      xray-{简短标题}
+date:       {YYYY-MM-DD Day HH:MM}
+tags:       [read, xray, paper]
+identifier: {YYYYMMDDTHHMMSS}
+source:     {论文链接}
+authors:    {作者}
+venue:      {会议/期刊}
+---
 
-* NAPKIN FORMULA
+# NAPKIN FORMULA
 
-#+begin_example
+```
 +----------------------------------------------------------+
 |                                                          |
 |   {餐巾纸公式}                                            |
 |                                                          |
 +----------------------------------------------------------+
-#+end_example
+```
 
 {一句话解释公式含义}
 
-* PROBLEM
+# PROBLEM
 
 **痛点定义**: {一句话定义问题}
 
 **前人困境**: {为什么之前解决不了}
 
-* INSIGHT
+# INSIGHT
 
 **核心直觉**: {作者的灵光一闪，用最直白的语言}
 
@@ -105,13 +107,13 @@ user_invocable: true
 1. {神来之笔1}
 2. {神来之笔2}
 
-* DELTA
+# DELTA
 
 **vs SOTA**: {相比当前最佳的具体提升}
 
 **新拼图**: {为人类知识库增加了什么}
 
-* CRITIQUE
+# CRITIQUE
 
 **隐形假设**:
 - {假设1}
@@ -121,25 +123,25 @@ user_invocable: true
 - {遗留问题1}
 - {遗留问题2}
 
-* LOGIC FLOW
+# LOGIC FLOW
 
-#+begin_example
-{纯 ASCII 逻辑结构图: 问题 --> 洞见 --> 方法 --> 结果}
-#+end_example
-
-* NAPKIN SKETCH
-
-#+begin_example
-{餐巾纸图: 用 ASCII 绘制核心概念}
-#+end_example
 ```
+{纯 ASCII 逻辑结构图: 问题 --> 洞见 --> 方法 --> 结果}
+```
+
+# NAPKIN SKETCH
+
+```
+{餐巾纸图: 用 ASCII 绘制核心概念}
+```
+~~~
 
 ### 步骤 6：保存并打开
 
 1. 生成时间戳：使用 Bash 执行 `date +%Y%m%dT%H%M%S` 获取当前时间
-2. 文件名格式（denote 规范）：`{时间戳}--xray-{简短标题}__read.org`
+2. 文件名格式（denote 规范）：`{时间戳}--xray-{简短标题}__read.md`
    - 简短标题：取论文标题前 3-5 个关键词，小写，用连字符连接
-   - 示例：`20260207T171500--xray-dflash-block-diffusion__read.org`
+   - 示例：`20260207T171500--xray-dflash-block-diffusion__read.md`
 3. 保存路径：`~/Documents/notes/{文件名}`
 4. 使用 Bash 执行：`open ~/Documents/notes/{文件名}`
 
